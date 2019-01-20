@@ -4,5 +4,5 @@ import (
 )
 func main() {  
 	golang.TypeTest("Hello Go World!")
-	golang.TypeTest(123)
+	golang.TypeTest(123)//
 }   

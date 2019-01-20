@@ -1,0 +1,2 @@
+hello World From A .txt File!
+THIS is a Text File and 包含了中文。呵呵！

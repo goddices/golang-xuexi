@@ -1,8 +1,12 @@
 package main 
 import ( 
-	"golang-xuexi/golang"
+	"golang-xuexi/language"
+	//"golang-xuexi/algorithm"
 )
 func main() {  
-	golang.TypeTest("Hello Go World!")
-	golang.TypeTest(123)//
+	// language.TypeTest("Hello Go World!")
+	// language.TypeTest(123)
+	language.DeferTest()
+	// algorithm.SortTest()
+	// algorithm.HashTest()
 }   

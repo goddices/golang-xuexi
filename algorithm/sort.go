@@ -1,9 +1,10 @@
-package goalgo
+package algorithm
 
 import (
 	"fmt"
 )
 
+// SortTest is to try coding some sort algorithm in golang
 func SortTest() {
 	var test1 = []int{4, 1, 31, 65, 34, 90, 15, 4, 34, 56, 90, 101, 35, 54, 83, 3, 40, 30}
 	result1 := quicksort(test1)

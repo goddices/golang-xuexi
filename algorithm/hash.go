@@ -1,9 +1,10 @@
-package goalgo
+package algorithm
 
 import (
 	"fmt"
 )
 
+// HashTest is to try some hash functions
 func HashTest() {
 	fmt.Println(hashAdd1(100))
 	fmt.Println(hashAdd1(101))
@@ -22,8 +23,7 @@ func HashTest() {
 5. 查表Hash；
 6. 混合Hash；
 */
-
-//
+ 
 func hashAdd1(input int) int {
 	return (input % 8) ^ 5
 }

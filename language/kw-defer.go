@@ -29,7 +29,13 @@ func defer2(x, y int) (z int) {
 	//Go语言的return关键字,参见kw-return.go
 	defer func() { z += 100 }()
 	z = x + y
-	return z + 50 // 执行顺序 z = z+50 -> (call defer)z = z+100 -> ret
+	return z + 50 
+	// 执行顺序:
+	// z = x + y
+	// z = z + 50 
+	// defer func: z = z + 100 
+	// return z 
+	// defer2(1,1)=152
 }
 
 func defer3() (result int) {

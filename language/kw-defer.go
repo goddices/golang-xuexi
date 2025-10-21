@@ -1,59 +1,38 @@
 package language
+
 import "fmt"
+
 // DeferTest is to try defer keyword
-func DeferTest() { 
-	defer1()
-	fmt.Println()
-	fmt.Println(defer2(1, 1))
-	fmt.Println(defer3())
-	fmt.Println(defer4())
-}
+func DeferTest() {
 
-
-
-func defer1() {
+	fmt.Println("first call in DeferTest")
 	for i := 0; i < 5; i++ {
 		defer fmt.Printf("%d ", i)
-	} 
-	/* 被defer的函数，实际声明了5次，以栈的顺序执行（先进后出）：
-	 * fmt.Printf("%d ", 4)  第五次defer
-	 * fmt.Printf("%d ", 3)  第四次defer
-	 * fmt.Printf("%d ", 2)  第三次defer
-	 * fmt.Printf("%d ", 1)  第二次defer
-	 * fmt.Printf("%d ", 0)  第一次defer
-	 */
+	}
+
+	fmt.Println("\nDeferTest about to return")
+	fmt.Println("\nDeferTest deferFunction result:", deferFunction())
+
+	fmt.Println("DeferTest about to return 2")
+	fmt.Println("\nDeferTest deferFunction2 result:", deferFunction2())
 }
 
- 
-func defer2(x, y int) (z int) {
-	//Go语言的return关键字,参见kw-return.go
-	defer func() { z += 100 }()
-	z = x + y
-	return z + 50 
-	// 执行顺序:
-	// z = x + y
-	// z = z + 50 
-	// defer func: z = z + 100 
-	// return z 
-	// defer2(1,1)=152
-}
-
-func defer3() (result int) {
+func deferFunction() (result int) {
 	defer func() {
 		result++
 	}()
 	return 0
 }
 
-func defer4() int {
+func deferFunction2() int {
 	var i int
 	defer func() {
 		i++
-		fmt.Println("deferB:", i) 
+		fmt.Println("deferB:", i)
 	}()
 	defer func() {
 		i++
-		fmt.Println("deferA:", i) 
+		fmt.Println("deferA:", i)
 	}()
 	return i
 }

@@ -1,18 +1,22 @@
-package main 
-import ( 
-	"golang-xuexi/language"
-	//"golang-xuexi/algorithm"
-)
-func main() {  
-	language.GoTest()
-	language.ChanTest()
-	language.SelectTest()
-	/*
-	language.TypeTest("Hello Go World!")
-	language.TypeTest(123)
-	language.DeferTest()
-	language.ReturnTest()
-	algorithm.SortTest()
-	algorithm.HashTest()
-	*/
-}   
+package main
+
+import "zhufeng/goxuexi/language"
+
+func main() {
+
+	// language.GoTest()
+	// language.DeferTest()
+	// language.ChanTest()
+	// language.SelectTest()
+	language.ChanBlockedTest()
+
+	//language.TypeTest("Hello Go World!")
+	//language.TypeTest(123)
+	//language.DeferTest()
+	//language.ReturnTest()
+	// language.OopTest()
+	// language.OopFuncTests()
+	//algorithm.SortTest()
+	//algorithm.HashTest()
+
+}

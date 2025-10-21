@@ -1,6 +1,8 @@
 package language
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // Books type is a
 type Books struct {
@@ -30,4 +32,29 @@ func OopTest() {
 func hehe(b1, b2 Books) string {
 
 	return b1.title + " ..." + b2.title
+}
+
+func OopFuncTests() {
+	book := Books{}
+	fmt.Printf("book struct address:%p\n", &book)
+	book.SetInfo("Go语言", "朱峰", 101, "Go语言入门到放弃")
+	book.printInfoByParameter()
+	book.printInfoByPointer()
+}
+
+func (b Books) printInfoByParameter() {
+	fmt.Printf("lets print first for variable b struct address: %p\n", &b)
+	fmt.Printf("then print info: title:%s, author:%s, subject:%s, bookID:%d\n", b.title, b.author, b.subject, b.bookID)
+}
+
+func (b *Books) printInfoByPointer() {
+	fmt.Printf("lets print first  for variable b pointer address:%p\n", b)
+	fmt.Printf("then print info: title:%s, author:%s, subject:%s, bookID:%d\n", b.title, b.author, b.subject, b.bookID)
+}
+
+func (b *Books) SetInfo(title, author string, bookID int, subject string) {
+	b.title = title
+	b.author = author
+	b.bookID = bookID
+	b.subject = subject
 }

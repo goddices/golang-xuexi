@@ -1,8 +1,47 @@
 package language
 
 import "fmt"
- 
- 
+
+func DataStructureTest() {
+
+	var userIds []int = []int{101, 102, 103, 104, 105}
+	for i, id := range userIds {
+		fmt.Printf("User %d: ID=%d\n", i+1, id)
+	}
+	var allUsers []string
+	allUsers = append(allUsers, "user1", "user2", "user3", "user4", "user5", "user6")
+	// var blackList []string = []string{"user2", "user4"}
+
+	var top5Users []string = allUsers[:5]
+	fmt.Println("Top 5 Users:", top5Users)
+
+	var employeeMap map[string]int = map[string]int{
+		"Alice": 30,
+		"Bob":   25,
+		"Carol": 28,
+	}
+	fmt.Println("Employee Map:", employeeMap)
+	fmt.Println("Alice's Age:", employeeMap["Alice"])
+
+	scene := map[string]string{
+		"forest":  "A dark and spooky forest.",
+		"castle":  "An ancient castle with tall towers.",
+		"village": "A small village with friendly inhabitants.",
+	}
+	fmt.Println("Scene Map:", scene)
+	for key, desc := range scene {
+		fmt.Printf("%s: %s\n", key, desc)
+	}
+
+	people := make(map[string]int, 20)
+	people["John"] = 35
+	people["Jane"] = 29
+	fmt.Println("People Map:", people)
+
+	var million = 1_000_000
+	fmt.Println("Million:", million)
+}
+
 // TypeTest is to try type system
 func TypeTest(value interface{}) {
 	switch str := value.(type) {
@@ -13,7 +52,7 @@ func TypeTest(value interface{}) {
 	}
 }
 
-// PointerTest is to try pointer *int 
+// PointerTest is to try pointer *int
 func PointerTest() {
 	var c int = 10
 	var a *int = &c
@@ -23,7 +62,7 @@ func PointerTest() {
 	fmt.Println(*a)
 	fmt.Println(&b)
 }
- 
+
 // ArrayTest is to try array
 func ArrayTest() {
 	var arr1 = []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
@@ -33,7 +72,7 @@ func ArrayTest() {
 	fmt.Println(len(arr2))
 }
 
-// StructTest is to try struct, class... 
+// StructTest is to try struct, class...
 func StructTest() {
 	fmt.Println(YB)
 	var fs ByteSize = 100000
@@ -77,4 +116,3 @@ func (b ByteSize) String() string {
 	}
 	return fmt.Sprintf("%.2fB", b)
 }
-

@@ -1,6 +1,8 @@
 package main
 
-import "zhufeng/goxuexi/language"
+import (
+	"zhufeng/goxuexi/thirdlib"
+)
 
 func main() {
 
@@ -8,7 +10,7 @@ func main() {
 	// language.DeferTest()
 	// language.ChanTest()
 	// language.SelectTest()
-	language.ChanBlockedTest()
+	// language.ChanBlockedTest()
 
 	//language.TypeTest("Hello Go World!")
 	//language.TypeTest(123)
@@ -19,4 +21,5 @@ func main() {
 	//algorithm.SortTest()
 	//algorithm.HashTest()
 
+	thirdlib.RestyTest()
 }
